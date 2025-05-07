@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: #C0C0C0;
+}
+
+/* 1. Bar */
+.top-bar {
+  background-color: #1a1a1a;
+  padding: 1rem 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 1px solid #444;
+}
+
+.logo {
+  display: inline-block;
+  color: #C0C0C0;
+  transition: all 0.4s ease;
+  letter-spacing: 0.05em;
+  animation: wobble 3s infinite ease-in-out;
+}
+
+.logo:hover {
+  transform: scale(1.15);
+  color: #ffffff;
+  letter-spacing: 0.2em;
+}
+
+/* 2. Bar */
+.product-bar {
+  background-color: #222;
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+.product-bar ul {
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  list-style: none;
+  justify-content: center;
+}
+
+.product-bar li {
+  margin: 0 1rem;
+}
+
+.product-link {
+  text-decoration: none;
+  color: #C0C0C0;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: inline-block;
+  transform-origin: center;
+}
+
+.product-link:hover {
+  color: #ffffff;
+  transform: scale(1.15);
+}
+
+.product-link:active {
+  transform: scale(0.95);
+  color: #ffffff;
+}
+
+@media (hover: none) {
+  .product-link:active {
+    transform: scale(1.1);
+  }
+}
+
+/* Ürün Kaydırma Alanı */
+.carousel-section {
+  overflow-x: auto;
+  padding: 1rem 0.5rem;
+}
+
+.carousel-container {
+  display: flex;
+  gap: 1rem;
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  padding: 1rem;
+}
+
+.carousel-item {
+  min-width: 250px;
+  height: 150px;
+  background-color: #2a2a2a;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #555;
+  border-radius: 10px;
+  font-size: 1rem;
+  color: #C0C0C0;
+}
+
+/* Hakkımızda Alanı */
+.about {
+  padding: 2rem;
+  background-color: #1a1a1a;
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #444;
+}
+
+/* Logo sallanma animasyonu */
+@keyframes wobble {
+  0% { transform: rotateY(0deg); }
+  25% { transform: rotateY(3deg); }
+  50% { transform: rotateY(0deg); }
+  75% { transform: rotateY(-3deg); }
+  100% { transform: rotateY(0deg); }
+}

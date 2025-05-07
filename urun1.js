@@ -1,0 +1,1 @@
+console.log("Ürün 1 sayfası başarıyla yüklendi.");
