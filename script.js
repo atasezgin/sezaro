@@ -35,3 +35,17 @@ tabContact.addEventListener('click', () => {
   contactContent.style.display = 'block';
   indicator.style.left = '50%';
 });
+
+// Mouse takipli glow efekt
+document.addEventListener('mousemove', e => {
+  document.querySelectorAll('.glow-target').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    if (x >= 0 && y >= 0 && x <= rect.width && y <= rect.height) {
+      el.classList.add('glow-light');
+    } else {
+      el.classList.remove('glow-light');
+    }
+  });
+});
