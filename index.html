@@ -7,12 +7,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Üst Bar (1. Bar) -->
+  <!-- Üst Bar -->
   <header class="top-bar">
     <div class="logo">Sezaro</div>
   </header>
 
-  <!-- Ürün Menü Barı (2. Bar) -->
+  <!-- Ürün Menü Barı -->
   <nav class="product-bar">
     <ul>
       <li><a href="urun1.html" class="product-link">Ürün 1</a></li>
@@ -27,7 +27,7 @@
   </nav>
 
   <!-- Kaydırmalı Ürün Tanıtım Bölümü -->
-  <section class="carousel-section">
+  <section class="carousel-section animate">
     <div class="carousel-container">
       <div class="carousel-item">Görsel 1</div>
       <div class="carousel-item">Görsel 2</div>
@@ -35,10 +35,22 @@
     </div>
   </section>
 
-  <!-- Hakkımızda Bölümü -->
-  <section class="about">
-    <h2>Hakkımızda</h2>
-    <p>Sezaro olarak, yüksek kaliteli ürünlerle otomobil bakımına yenilik katıyoruz. Güçlü formüllerimiz ve şık tasarımlarımızla sizlere en iyisini sunmayı hedefliyoruz.</p>
+  <!-- Hakkında / İletişim Geçiş Alanı -->
+  <section class="info-toggle">
+    <div class="info-tabs">
+      <div class="tab active" id="tab-about">Hakkında</div>
+      <div class="tab" id="tab-contact">İletişim</div>
+      <div class="tab-indicator"></div>
+    </div>
+    <div class="info-content" id="about-content">
+      <h2>Hakkımızda</h2>
+      <p>Sezaro olarak, yüksek kaliteli ürünlerle otomobil bakımına yenilik katıyoruz. Güçlü formüllerimiz ve şık tasarımlarımızla sizlere en iyisini sunmayı hedefliyoruz.</p>
+    </div>
+    <div class="info-content" id="contact-content" style="display: none;">
+      <h2>İletişim</h2>
+      <p>Bize ulaşmak için aşağıdaki kanalları kullanabilirsiniz:</p>
+      <p>📧 sezaro@example.com<br>📞 +90 555 555 55 55<br>💬 WhatsApp: <a href="https://wa.me/905555555555" target="_blank">Hemen mesaj at</a></p>
+    </div>
   </section>
 
   <script src="script.js"></script>

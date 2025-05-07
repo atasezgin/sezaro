@@ -68,4 +68,18 @@ body {
     .product-image img {
       max-width: 100%;
     }
+    .product-container {
+      animation: fadeSlideIn 1.2s ease;
+    }
+    
+    @keyframes fadeSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
