@@ -1,6 +1,3 @@
-console.log("Sezaro web sitesi yüklendi.");
-
-// Scroll animasyonu
 function handleScrollAnimation() {
   const animatables = document.querySelectorAll('.animate');
   animatables.forEach(el => {
@@ -13,7 +10,6 @@ function handleScrollAnimation() {
 window.addEventListener('scroll', handleScrollAnimation);
 window.addEventListener('load', handleScrollAnimation);
 
-// Sekme geçişi
 const tabAbout = document.getElementById('tab-about');
 const tabContact = document.getElementById('tab-contact');
 const aboutContent = document.getElementById('about-content');
@@ -27,6 +23,7 @@ tabAbout.addEventListener('click', () => {
   contactContent.style.display = 'none';
   indicator.style.left = '0%';
 });
+
 tabContact.addEventListener('click', () => {
   tabContact.classList.add('active');
   tabAbout.classList.remove('active');
@@ -35,7 +32,6 @@ tabContact.addEventListener('click', () => {
   indicator.style.left = '50%';
 });
 
-// Glow efekti
 document.addEventListener('mousemove', e => {
   document.querySelectorAll('.glow-target').forEach(el => {
     const rect = el.getBoundingClientRect();

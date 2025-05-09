@@ -1,33 +1,62 @@
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #121212;
-  color: #C0C0C0;
+  background-color: #e0e0e0;
+  color: #121212;
 }
 
-/* Üst bar ve logo */
 .top-bar {
-  background-color: #1a1a1a;
-  padding: 1rem 2rem;
+  background-color: #e0e0e0;
+  padding: 0.5rem 2rem;
+  border-bottom: 1px solid #bbb;
   text-align: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  flex-wrap: nowrap;
+}
+
+.logo-text {
+  color: #121212;
   font-size: 2rem;
   font-weight: bold;
-  border-bottom: 1px solid #444;
-}
-.logo {
-  display: inline-block;
-  color: #C0C0C0;
   transition: all 0.4s ease;
   letter-spacing: 0.05em;
   animation: wobble 3s infinite ease-in-out;
 }
-.logo:hover {
+
+.logo-text:hover {
   transform: scale(1.15);
-  color: #ffffff;
+  color: #000000;
   letter-spacing: 0.2em;
 }
 
-/* Ürün Barı */
+.logo-img {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+  .logo-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 85px;
+  }
+}
+
 .product-bar {
   background-color: #222;
   overflow-x: auto;
@@ -35,6 +64,7 @@ body {
   padding: 0.5rem 0;
   text-align: center;
 }
+
 .product-bar ul {
   padding: 0;
   margin: 0;
@@ -42,9 +72,11 @@ body {
   list-style: none;
   justify-content: center;
 }
+
 .product-bar li {
   margin: 0 1rem;
 }
+
 .product-link {
   text-decoration: none;
   color: #C0C0C0;
@@ -53,19 +85,21 @@ body {
   display: inline-block;
   transform-origin: center;
 }
+
 .product-link:hover {
   color: #ffffff;
   transform: scale(1.15);
 }
+
 .product-link:active {
   transform: scale(0.95);
   color: #ffffff;
 }
 
-/* Kaydırmalı ürün görselleri */
 .carousel-section {
   padding: 2rem 0;
 }
+
 .carousel-container {
   display: flex;
   overflow-x: auto;
@@ -73,29 +107,36 @@ body {
   padding: 1rem;
   scroll-snap-type: x mandatory;
 }
+
 .carousel-item {
   min-width: 280px;
   height: 180px;
-  background-color: #2a2a2a;
+  background-color: transparent;
   scroll-snap-align: start;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #C0C0C0;
-  font-weight: bold;
-  border: 2px solid #444;
-  border-radius: 10px;
   flex-shrink: 0;
+  border-radius: 10px;
 }
 
-/* Yorum Bölümü */
+.carousel-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
 .review-section {
   padding: 2rem 1rem;
 }
+
 .review-section h2 {
   text-align: center;
   margin-bottom: 1rem;
+  color: #121212;
 }
+
 .review-carousel {
   display: flex;
   gap: 1rem;
@@ -104,9 +145,10 @@ body {
   scroll-snap-type: x mandatory;
   scroll-padding-left: 1rem;
 }
+
 .review-card {
-  background-color: #1f1f1f;
-  border: 1px solid #444;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
   border-radius: 10px;
   padding: 1rem;
   flex: 0 0 85%;
@@ -114,15 +156,20 @@ body {
   scroll-snap-align: start;
   flex-shrink: 0;
   transition: transform 0.3s ease;
+  color: #1a1a1a;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.08);
 }
+
 .review-card:hover {
   transform: scale(1.03);
 }
+
 .stars {
   font-size: 1.2rem;
-  color: gold;
+  color: goldenrod;
   margin-bottom: 0.5rem;
 }
+
 @media (min-width: 768px) {
   .review-card {
     flex: 0 0 300px;
@@ -130,56 +177,63 @@ body {
   }
 }
 
-/* Hakkında / İletişim */
 .info-toggle {
   margin: 4rem auto 2rem;
   max-width: 800px;
   padding: 0 1rem;
+  color: #121212;
 }
+
 .info-tabs {
   display: flex;
   justify-content: space-around;
   position: relative;
-  border-bottom: 2px solid #333;
+  border-bottom: 2px solid #888;
   margin-bottom: 1.5rem;
 }
+
 .tab {
   padding: 0.5rem 1rem;
   cursor: pointer;
   font-weight: 500;
   transition: all 0.3s ease;
-  color: #C0C0C0;
+  color: #333;
 }
+
 .tab:hover {
   transform: scale(1.05);
-  color: #fff;
+  color: #000;
 }
+
 .tab.active {
   font-size: 1.2rem;
-  color: #fff;
+  color: #000;
 }
+
 .tab-indicator {
   position: absolute;
   bottom: -2px;
   left: 0;
   height: 3px;
   width: 50%;
-  background-color: #fff;
+  background-color: #333;
   transition: all 0.4s ease;
 }
+
 .info-content {
   opacity: 0;
   transform: translateY(30px);
   animation: fadeSlideIn 0.6s ease forwards;
+  color: #1a1a1a;
 }
 
-/* Animasyonlar */
 @keyframes fadeSlideIn {
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+
 @keyframes wobble {
   0% { transform: rotateY(0deg); }
   25% { transform: rotateY(3deg); }
@@ -188,10 +242,10 @@ body {
   100% { transform: rotateY(0deg); }
 }
 
-/* Glow */
 .glow-target {
   transition: box-shadow 0.2s ease;
 }
+
 .glow-light {
   box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.2);
 }
