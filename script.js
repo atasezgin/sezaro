@@ -44,3 +44,18 @@ document.addEventListener('mousemove', e => {
     }
   });
 });
+window.addEventListener("DOMContentLoaded", () => {
+  const popup = document.getElementById("popup-overlay");
+  const closeBtn = document.getElementById("close-popup");
+
+  popup.style.display = "flex";
+
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  // Otomatik kapanma (örneğin 8 saniye sonra)
+  setTimeout(() => {
+    popup.style.display = "none";
+  }, 8000);
+});

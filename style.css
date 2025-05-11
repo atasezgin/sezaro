@@ -1,14 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Glacial+Indifference:wght@400;700&display=swap');
+
 body {
   margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background-color: #e0e0e0;
+  background-image: url('Adsız tasarım.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #121212;
 }
 
 .top-bar {
-  background-color: #e0e0e0;
-  padding: 0.5rem 2rem;
+  background-image: url('Adsız tasarım.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100px; /* daha ince bar yüksekliği */
+  padding: 0 2rem;
   border-bottom: 1px solid #bbb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -16,47 +28,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.1rem;
-  flex-wrap: nowrap;
 }
 
-.logo-text {
-  color: #121212;
-  font-size: 2rem;
-  font-weight: bold;
-  transition: all 0.4s ease;
-  letter-spacing: 0.05em;
-  animation: wobble 3s infinite ease-in-out;
+.von-logo {
+  height: 200px; /* iyice büyütüldü */
+  transition: transform 0.4s ease, filter 0.4s ease;
 }
 
-.logo-text:hover {
-  transform: scale(1.15);
-  color: #000000;
-  letter-spacing: 0.2em;
+.von-logo:hover {
+  transform: scale(1.25);
+  filter: brightness(1.1);
 }
 
-.logo-img {
-  height: 100px;
-  width: auto;
-  object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.logo-img:hover {
-  transform: scale(1.1);
-}
-
-@media (max-width: 600px) {
-  .logo-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo-img {
-    height: 85px;
-  }
-}
-
+/* Ürün Menü Barı */
 .product-bar {
   background-color: #222;
   overflow-x: auto;
@@ -96,6 +80,8 @@ body {
   color: #ffffff;
 }
 
+
+/* Carousel */
 .carousel-section {
   padding: 2rem 0;
 }
@@ -127,6 +113,7 @@ body {
   border-radius: 10px;
 }
 
+/* Yorumlar */
 .review-section {
   padding: 2rem 1rem;
 }
@@ -177,6 +164,7 @@ body {
   }
 }
 
+/* Hakkında / İletişim */
 .info-toggle {
   margin: 4rem auto 2rem;
   max-width: 800px;
@@ -227,6 +215,7 @@ body {
   color: #1a1a1a;
 }
 
+/* Animasyonlar */
 @keyframes fadeSlideIn {
   to {
     opacity: 1;
@@ -248,4 +237,45 @@ body {
 
 .glow-light {
   box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.2);
+}
+
+/* Pop-up */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  display: none;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 90%;
+  text-align: center;
+  color: #121212;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease forwards;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #888;
+  transition: color 0.3s;
+}
+
+.close-btn:hover {
+  color: #000;
 }
